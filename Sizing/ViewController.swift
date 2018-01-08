@@ -32,6 +32,8 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
+
+        // This line has to be done to make sure the cell sizes with autolayout
 		cell.contentView.translatesAutoresizingMaskIntoConstraints = false
 
 		let diceRoll = CGFloat(arc4random_uniform(6) + 1)
